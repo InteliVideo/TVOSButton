@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE6F73CD9D6DA0C5C7F23542 /* Pods_TVOSButtonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F203B6471925C4F0CDA83E /* Pods_TVOSButtonTests.framework */; };
 		B238BC0B1C6E63CB003160F5 /* TVOSButtonShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B238BC0A1C6E63CA003160F5 /* TVOSButtonShadow.swift */; };
 		B238BC101C6E63E1003160F5 /* TVOSButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B238BC0F1C6E63E1003160F5 /* TVOSButtonImage.swift */; };
 		B238BC121C6E640D003160F5 /* TVOSButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B238BC111C6E640D003160F5 /* TVOSButtonLabel.swift */; };
@@ -15,7 +16,8 @@
 		B25D2F701C6C54E900C3DAE4 /* TVOSButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25D2F651C6C54E800C3DAE4 /* TVOSButton.framework */; };
 		B25D2F751C6C54E900C3DAE4 /* TVOSButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D2F741C6C54E900C3DAE4 /* TVOSButtonTests.swift */; };
 		B25D2F801C6C551100C3DAE4 /* TVOSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D2F7F1C6C551100C3DAE4 /* TVOSButton.swift */; };
-		B732DEB8548D80AAE00C24A4 /* Pods_TVOSButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADB57450165E7AA32C1FEB1 /* Pods_TVOSButton.framework */; };
+		BE67CC031D9B78950039EA78 /* ALKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE67CC021D9B78950039EA78 /* ALKit.swift */; };
+		C416F73B05FE84559BC88655 /* Pods_TVOSButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5F15F5BA32729A1A918E17 /* Pods_TVOSButton.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6ADB57450165E7AA32C1FEB1 /* Pods_TVOSButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVOSButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		384936A3BC9CE1E0EBD869FF /* Pods-TVOSButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVOSButton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVOSButton/Pods-TVOSButton.debug.xcconfig"; sourceTree = "<group>"; };
+		58618B30FE863B31F5F433E8 /* Pods-TVOSButtonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVOSButtonTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVOSButtonTests/Pods-TVOSButtonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D5F15F5BA32729A1A918E17 /* Pods_TVOSButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVOSButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70F203B6471925C4F0CDA83E /* Pods_TVOSButtonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVOSButtonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A741DA55466341D7AB6B8688 /* Pods-TVOSButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVOSButton.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVOSButton/Pods-TVOSButton.release.xcconfig"; sourceTree = "<group>"; };
 		B238BC0A1C6E63CA003160F5 /* TVOSButtonShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVOSButtonShadow.swift; sourceTree = "<group>"; };
 		B238BC0F1C6E63E1003160F5 /* TVOSButtonImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVOSButtonImage.swift; sourceTree = "<group>"; };
 		B238BC111C6E640D003160F5 /* TVOSButtonLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVOSButtonLabel.swift; sourceTree = "<group>"; };
@@ -41,8 +47,8 @@
 		B25D2F741C6C54E900C3DAE4 /* TVOSButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVOSButtonTests.swift; sourceTree = "<group>"; };
 		B25D2F761C6C54E900C3DAE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B25D2F7F1C6C551100C3DAE4 /* TVOSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVOSButton.swift; sourceTree = "<group>"; };
-		B55371F30F3E28C0B3CE9B8C /* Pods-TVOSButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVOSButton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVOSButton/Pods-TVOSButton.debug.xcconfig"; sourceTree = "<group>"; };
-		C33D4762B34F3D2649C01DC7 /* Pods-TVOSButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVOSButton.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVOSButton/Pods-TVOSButton.release.xcconfig"; sourceTree = "<group>"; };
+		BE67CC021D9B78950039EA78 /* ALKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALKit.swift; sourceTree = "<group>"; };
+		DDE4819E346AB95A740F29BF /* Pods-TVOSButtonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVOSButtonTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVOSButtonTests/Pods-TVOSButtonTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B732DEB8548D80AAE00C24A4 /* Pods_TVOSButton.framework in Frameworks */,
+				C416F73B05FE84559BC88655 /* Pods_TVOSButton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,37 +65,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				B25D2F701C6C54E900C3DAE4 /* TVOSButton.framework in Frameworks */,
+				AE6F73CD9D6DA0C5C7F23542 /* Pods_TVOSButtonTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		454E178A0A162B14A8A832F0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6ADB57450165E7AA32C1FEB1 /* Pods_TVOSButton.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		94751A2FFB7000EC347FFB8D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B55371F30F3E28C0B3CE9B8C /* Pods-TVOSButton.debug.xcconfig */,
-				C33D4762B34F3D2649C01DC7 /* Pods-TVOSButton.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		B25D2F5B1C6C54E800C3DAE4 = {
 			isa = PBXGroup;
 			children = (
 				B25D2F671C6C54E800C3DAE4 /* TVOSButton */,
 				B25D2F731C6C54E900C3DAE4 /* TVOSButtonTests */,
 				B25D2F661C6C54E800C3DAE4 /* Products */,
-				94751A2FFB7000EC347FFB8D /* Pods */,
-				454E178A0A162B14A8A832F0 /* Frameworks */,
+				DCA4F4BCA3F9D0AA57BC4AFF /* Pods */,
+				D9C61A6498595513114E8C6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +102,7 @@
 				B238BC111C6E640D003160F5 /* TVOSButtonLabel.swift */,
 				B238BC0F1C6E63E1003160F5 /* TVOSButtonImage.swift */,
 				B25ADB1A1C72D8CD00735E04 /* TVOSToggleButton.swift */,
+				BE67CC021D9B78950039EA78 /* ALKit.swift */,
 			);
 			path = TVOSButton;
 			sourceTree = "<group>";
@@ -123,6 +114,26 @@
 				B25D2F761C6C54E900C3DAE4 /* Info.plist */,
 			);
 			path = TVOSButtonTests;
+			sourceTree = "<group>";
+		};
+		D9C61A6498595513114E8C6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D5F15F5BA32729A1A918E17 /* Pods_TVOSButton.framework */,
+				70F203B6471925C4F0CDA83E /* Pods_TVOSButtonTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCA4F4BCA3F9D0AA57BC4AFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				384936A3BC9CE1E0EBD869FF /* Pods-TVOSButton.debug.xcconfig */,
+				A741DA55466341D7AB6B8688 /* Pods-TVOSButton.release.xcconfig */,
+				58618B30FE863B31F5F433E8 /* Pods-TVOSButtonTests.debug.xcconfig */,
+				DDE4819E346AB95A740F29BF /* Pods-TVOSButtonTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,12 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B25D2F791C6C54E900C3DAE4 /* Build configuration list for PBXNativeTarget "TVOSButton" */;
 			buildPhases = (
-				C41155D7D6E9546CCF5C37BE /* Check Pods Manifest.lock */,
+				F48CC379F5276B8E3F7C9E7F /* [CP] Check Pods Manifest.lock */,
 				B25D2F601C6C54E800C3DAE4 /* Sources */,
 				B25D2F611C6C54E800C3DAE4 /* Frameworks */,
 				B25D2F621C6C54E800C3DAE4 /* Headers */,
 				B25D2F631C6C54E800C3DAE4 /* Resources */,
-				0AF7B942E4A0255ED6E3596B /* Copy Pods Resources */,
+				549F8F2C88928F4637FDF706 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B25D2F7C1C6C54E900C3DAE4 /* Build configuration list for PBXNativeTarget "TVOSButtonTests" */;
 			buildPhases = (
+				25A7F3C8B86398DC3A31013C /* [CP] Check Pods Manifest.lock */,
 				B25D2F6B1C6C54E900C3DAE4 /* Sources */,
 				B25D2F6C1C6C54E900C3DAE4 /* Frameworks */,
 				B25D2F6D1C6C54E900C3DAE4 /* Resources */,
+				8BE12307FFBEBE877C38F87D /* [CP] Embed Pods Frameworks */,
+				0C25D895E6C10937FA1C118F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,11 +198,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = MovieLaLa;
 				TargetAttributes = {
 					B25D2F641C6C54E800C3DAE4 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					B25D2F6E1C6C54E900C3DAE4 = {
 						CreatedOnToolsVersion = 7.2;
@@ -231,14 +246,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0AF7B942E4A0255ED6E3596B /* Copy Pods Resources */ = {
+		0C25D895E6C10937FA1C118F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TVOSButtonTests/Pods-TVOSButtonTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25A7F3C8B86398DC3A31013C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		549F8F2C88928F4637FDF706 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,19 +291,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TVOSButton/Pods-TVOSButton-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C41155D7D6E9546CCF5C37BE /* Check Pods Manifest.lock */ = {
+		8BE12307FFBEBE877C38F87D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TVOSButtonTests/Pods-TVOSButtonTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F48CC379F5276B8E3F7C9E7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -273,6 +333,7 @@
 				B25ADB1B1C72D8CD00735E04 /* TVOSToggleButton.swift in Sources */,
 				B238BC101C6E63E1003160F5 /* TVOSButtonImage.swift in Sources */,
 				B238BC0B1C6E63CB003160F5 /* TVOSButtonShadow.swift in Sources */,
+				BE67CC031D9B78950039EA78 /* ALKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +369,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -355,8 +418,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -374,6 +439,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 				VALIDATE_PRODUCT = YES;
@@ -384,9 +450,11 @@
 		};
 		B25D2F7A1C6C54E900C3DAE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B55371F30F3E28C0B3CE9B8C /* Pods-TVOSButton.debug.xcconfig */;
+			baseConfigurationReference = 384936A3BC9CE1E0EBD869FF /* Pods-TVOSButton.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -398,14 +466,17 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		B25D2F7B1C6C54E900C3DAE4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C33D4762B34F3D2649C01DC7 /* Pods-TVOSButton.release.xcconfig */;
+			baseConfigurationReference = A741DA55466341D7AB6B8688 /* Pods-TVOSButton.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -416,26 +487,31 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		B25D2F7D1C6C54E900C3DAE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58618B30FE863B31F5F433E8 /* Pods-TVOSButtonTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TVOSButtonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSButtonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		B25D2F7E1C6C54E900C3DAE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDE4819E346AB95A740F29BF /* Pods-TVOSButtonTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TVOSButtonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.movielala.TVOSButtonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

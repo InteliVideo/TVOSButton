@@ -2,7 +2,7 @@ platform :tvos, '9.0'
 use_frameworks!
 
 target 'TVOSButton' do
-pod 'ALKit'
+    #pod 'ALKit'
 end
 
 target 'TVOSButtonTests' do

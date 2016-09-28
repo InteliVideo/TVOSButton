@@ -10,14 +10,14 @@ import UIKit
 
 
 public enum TVOSButtonImage {
-  case Custom(contentMode: UIViewContentMode?, size: CGSize?, offsets: UIEdgeInsets?, cornerRadius: CGFloat?, backgroundColor: UIColor?,
+  case custom(contentMode: UIViewContentMode?, size: CGSize?, offsets: UIEdgeInsets?, cornerRadius: CGFloat?, backgroundColor: UIColor?,
     adjustsImageWhenAncestorFocused: Bool?)
-  case Fill(adjustsImageWhenAncestorFocused: Bool?)
-  case Fit
+  case fill(adjustsImageWhenAncestorFocused: Bool?)
+  case fit
 
   public func getStyle() -> TVOSButtonImageStyle {
     switch self {
-    case .Custom(let contentMode, let size, let offsets, let cornerRadius, let backgroundColor, let adjustsImageWhenAncestorFocused):
+    case .custom(let contentMode, let size, let offsets, let cornerRadius, let backgroundColor, let adjustsImageWhenAncestorFocused):
       return TVOSButtonImageStyle(
         contentMode: contentMode,
         size: size,
@@ -26,9 +26,9 @@ public enum TVOSButtonImage {
         backgroundColor: backgroundColor,
         adjustsImageWhenAncestorFocused: adjustsImageWhenAncestorFocused)
 
-    case .Fill(let adjustsImageWhenAncestorFocused):
-      return TVOSButtonImage.Custom(
-        contentMode: .ScaleAspectFill,
+    case .fill(let adjustsImageWhenAncestorFocused):
+      return TVOSButtonImage.custom(
+        contentMode: .scaleAspectFill,
         size: nil,
         offsets: nil,
         cornerRadius: nil,
@@ -36,9 +36,9 @@ public enum TVOSButtonImage {
         adjustsImageWhenAncestorFocused: adjustsImageWhenAncestorFocused)
       .getStyle()
 
-    case .Fit:
-      return TVOSButtonImage.Custom(
-        contentMode: .ScaleAspectFit,
+    case .fit:
+      return TVOSButtonImage.custom(
+        contentMode: .scaleAspectFit,
         size: nil,
         offsets: nil,
         cornerRadius: nil,
@@ -56,10 +56,10 @@ public enum TVOSButtonImage {
     imageView.layer.cornerRadius = style.cornerRadius ?? 0
     imageView.layer.masksToBounds = true
     switch self {
-    case .Fill(_):
-      imageView.contentMode = .ScaleAspectFill
+    case .fill(_):
+      imageView.contentMode = .scaleAspectFill
     default:
-      imageView.contentMode = .Center
+      imageView.contentMode = .center
     }
   }
 

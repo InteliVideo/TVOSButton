@@ -9,15 +9,15 @@
 import UIKit
 
 public enum TVOSButtonShadow {
-  case Custom(color: UIColor?, offset: CGSize?, opacity: Float?, radius: CGFloat?, path: UIBezierPath?)
-  case Default(offsetX: CGFloat, offsetY: CGFloat, radius: CGFloat)
-  case Focused
-  case Highlighted
-  case TitleLabel
+  case custom(color: UIColor?, offset: CGSize?, opacity: Float?, radius: CGFloat?, path: UIBezierPath?)
+  case `default`(offsetX: CGFloat, offsetY: CGFloat, radius: CGFloat)
+  case focused
+  case highlighted
+  case titleLabel
 
   public func getStyle(withHeight height: CGFloat) -> TVOSButtonShadowStyle {
     switch self {
-    case .Custom(let color, let offset, let opacity, let radius, let path):
+    case .custom(let color, let offset, let opacity, let radius, let path):
       return TVOSButtonShadowStyle(
         color: color,
         offset: offset,
@@ -25,30 +25,30 @@ public enum TVOSButtonShadow {
         radius: radius,
         path: path)
 
-    case .Default(let x, let y, let r):
+    case .default(let x, let y, let r):
       return TVOSButtonShadowStyle(
-        color: UIColor.blackColor(),
+        color: UIColor.black,
         offset: CGSize(width: x, height: y),
         opacity: 0.2,
         radius: r,
         path: nil)
 
-    case .Focused:
-      return TVOSButtonShadow.Default(
+    case .focused:
+      return TVOSButtonShadow.default(
         offsetX: 0,
         offsetY: 25,
         radius: 10)
         .getStyle(withHeight: height)
 
-    case .Highlighted:
-      return TVOSButtonShadow.Default(
+    case .highlighted:
+      return TVOSButtonShadow.default(
         offsetX: 0,
         offsetY: 5,
         radius: 10)
         .getStyle(withHeight: height)
 
-    case .TitleLabel:
-      return TVOSButtonShadow.Default(
+    case .titleLabel:
+      return TVOSButtonShadow.default(
         offsetX: 0,
         offsetY: 2,
         radius: 3)
@@ -59,10 +59,10 @@ public enum TVOSButtonShadow {
   public func applyStyle(onLayer layer: CALayer?) {
     guard let layer = layer else { return }
     let style = getStyle(withHeight: layer.frame.height)
-    layer.shadowColor = style.color?.CGColor
+    layer.shadowColor = style.color?.cgColor
     layer.shadowOffset = style.offset ?? CGSize.zero
     layer.shadowOpacity = style.opacity ?? 1
-    layer.shadowPath = style.path?.CGPath
+    layer.shadowPath = style.path?.cgPath
     layer.shadowRadius = style.radius ?? 0
   }
 

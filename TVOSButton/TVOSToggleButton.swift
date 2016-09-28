@@ -8,20 +8,20 @@
 
 import UIKit
 
-public typealias TVOSToggleButtonDidToggledAction = (currentState: TVOSToggleButtonState, newState: (newState: TVOSToggleButtonState) -> Void) -> Void
+public typealias TVOSToggleButtonDidToggledAction = (_ currentState: TVOSToggleButtonState, _ newState: (_ newState: TVOSToggleButtonState) -> Void) -> Void
 
 public enum TVOSToggleButtonState {
-  case Waiting
-  case On
-  case Off
+  case waiting
+  case on
+  case off
 }
 
-public class TVOSToggleButton: TVOSButton {
+open class TVOSToggleButton: TVOSButton {
 
   // MARK; Properties
 
-  public var toggleState: TVOSToggleButtonState = .Waiting
-  public var didToggledAction: TVOSToggleButtonDidToggledAction? {
+  open var toggleState: TVOSToggleButtonState = .waiting
+  open var didToggledAction: TVOSToggleButtonDidToggledAction? {
     didSet {
       didToggled(self)
     }
@@ -46,16 +46,16 @@ public class TVOSToggleButton: TVOSButton {
     commonInit()
   }
 
-  public func commonInit() {
-    addTarget(self, action: "didToggled:", forControlEvents: .PrimaryActionTriggered)
+  open func commonInit() {
+    addTarget(self, action: #selector(TVOSToggleButton.didToggled(_:)), for: .primaryActionTriggered)
   }
 
   // MARK: Toggle
 
-  public func didToggled(sender: TVOSToggleButton) {
+  open func didToggled(_ sender: TVOSToggleButton) {
     didToggledAction?(
-      currentState: toggleState,
-      newState: { state in
+      toggleState,
+      { state in
         self.toggleState = state
       })
   }

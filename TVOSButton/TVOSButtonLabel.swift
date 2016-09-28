@@ -11,33 +11,33 @@ import UIKit
 // MARK: TVOSButtonLabel
 
 public enum TVOSButtonLabel {
-  case Custom(color: UIColor?, font: UIFont?, alignment: NSTextAlignment?, shadow: TVOSButtonShadow?)
-  case DefaultText(color: UIColor?)
-  case DefaultTitle(color: UIColor?)
+  case custom(color: UIColor?, font: UIFont?, alignment: NSTextAlignment?, shadow: TVOSButtonShadow?)
+  case defaultText(color: UIColor?)
+  case defaultTitle(color: UIColor?)
 
   public func getStyle() -> TVOSButtonLabelStyle {
     switch self {
-    case .Custom(let color, let font, let alignment, let shadow):
+    case .custom(let color, let font, let alignment, let shadow):
       return TVOSButtonLabelStyle(
         color: color, 
         font: font,
         alignment: alignment,
         shadow: shadow)
 
-    case .DefaultText(let color):
-      return TVOSButtonLabel.Custom(
+    case .defaultText(let color):
+      return TVOSButtonLabel.custom(
         color: color,
         font: nil,
         alignment: nil,
         shadow: nil)
       .getStyle()
 
-    case .DefaultTitle(let color):
-      return TVOSButtonLabel.Custom(
+    case .defaultTitle(let color):
+      return TVOSButtonLabel.custom(
         color: color,
-        font: UIFont.preferredFontForTextStyle(UIFontTextStyleCaption1),
+        font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.caption1),
         alignment: nil,
-        shadow: TVOSButtonShadow.TitleLabel)
+        shadow: TVOSButtonShadow.titleLabel)
       .getStyle()
     }
   }
@@ -46,17 +46,17 @@ public enum TVOSButtonLabel {
     guard let label = label else { return }
     let style = getStyle()
     style.shadow?.applyStyle(onLayer: label.layer)
-    label.textColor = style.color ?? UIColor.whiteColor()
-    label.font = style.font ?? UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-    label.textAlignment = style.alignment ?? .Center
+    label.textColor = style.color ?? UIColor.white
+    label.font = style.font ?? UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+    label.textAlignment = style.alignment ?? .center
   }
 
   public static func resetStyle(onLabel label: UILabel?) {
     guard let label = label else { return }
     TVOSButtonShadow.resetStyle(onLayer: label.layer)
-    label.textColor = UIColor.whiteColor()
-    label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
-    label.textAlignment = .Center
+    label.textColor = UIColor.white
+    label.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+    label.textAlignment = .center
   }
 }
 

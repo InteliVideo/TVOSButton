@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ALKit
 
 //
 // -------------- \
@@ -20,20 +19,20 @@ import ALKit
 // MARK: - TVOSButtonState
 
 public enum TVOSButtonState: CustomStringConvertible {
-  case Normal
-  case Focused
-  case Highlighted
-  case Disabled
+  case normal
+  case focused
+  case highlighted
+  case disabled
 
   public var description: String {
     switch self {
-    case .Normal:
+    case .normal:
       return "Normal"
-    case .Focused:
+    case .focused:
       return "Focused"
-    case .Highlighted:
+    case .highlighted:
       return "Highlighted"
-    case .Disabled:
+    case .disabled:
       return "Disabled"
     }
   }
@@ -62,7 +61,7 @@ public struct TVOSButtonStyle {
     button.tvosButtonBackgroundImageView?.image = backgroundImage
     button.tvosButton?.layer.cornerRadius = cornerRadius ?? 0
     button.tvosButton?.layer.masksToBounds = true
-    button.tvosButton?.transform = CGAffineTransformMakeScale(scale ?? 1, scale ?? 1)
+    button.tvosButton?.transform = CGAffineTransform(scaleX: scale ?? 1, y: scale ?? 1)
 
     // shadow
     if let shadow = shadow {
@@ -130,19 +129,19 @@ public struct TVOSButtonStyle {
 
 // MARK: - TVOSButton
 
-public class TVOSButton: UIButton {
+open class TVOSButton: UIButton {
 
   // MARK: Private Properties
 
-  private var tvosButton: UIView?
-  private var tvosButtonBackgroundImageView: UIImageView?
-  private var tvosCustomContentView: UIView?
-  private var tvosBadge: UIImageView?
-  private var tvosTextLabel: UILabel?
-  private var tvosTitleLabel: UILabel?
-  private var tvosTitleLabelTopConstraint: NSLayoutConstraint?
+  open var tvosButton: UIView?
+  open var tvosButtonBackgroundImageView: UIImageView?
+  open var tvosCustomContentView: UIView?
+  open var tvosBadge: UIImageView?
+  open var tvosTextLabel: UILabel?
+  open var tvosTitleLabel: UILabel?
+  open var tvosTitleLabelTopConstraint: NSLayoutConstraint?
 
-  private(set) var tvosButtonState: TVOSButtonState = .Normal {
+  fileprivate(set) var tvosButtonState: TVOSButtonState = .normal {
     didSet {
       handleStateDidChange()
     }
@@ -150,7 +149,7 @@ public class TVOSButton: UIButton {
 
   // MARK: Public Properties
 
-  public var badgeImage: UIImage? {
+  open var badgeImage: UIImage? {
     didSet {
       if tvosButtonStyleForState(tvosButtonState).badgeStyle != nil {
         tvosBadge?.image = badgeImage
@@ -158,7 +157,7 @@ public class TVOSButton: UIButton {
     }
   }
 
-  public var textLabelText: String? {
+  open var textLabelText: String? {
     didSet {
       if tvosButtonStyleForState(tvosButtonState).textStyle != nil {
         tvosTextLabel?.text = textLabelText
@@ -166,7 +165,7 @@ public class TVOSButton: UIButton {
     }
   }
 
-  public var titleLabelText: String? {
+  open var titleLabelText: String? {
     didSet {
       if tvosButtonStyleForState(tvosButtonState).titleStyle != nil {
         tvosTitleLabel?.text = titleLabelText
@@ -174,21 +173,21 @@ public class TVOSButton: UIButton {
     }
   }
 
-  public var titleLabelPaddingYOnFocus: CGFloat = 10
+  open var titleLabelPaddingYOnFocus: CGFloat = 10
 
-  public override var enabled: Bool {
+  open override var isEnabled: Bool {
     didSet {
-      tvosButtonState = enabled ? .Normal : .Disabled
+      tvosButtonState = isEnabled ? .normal : .disabled
     }
   }
 
-  public override var highlighted: Bool {
+  open override var isHighlighted: Bool {
     didSet {
-      tvosButtonState = highlighted ? .Highlighted : .Focused
+      tvosButtonState = isHighlighted ? .highlighted : .focused
     }
   }
 
-  public override var backgroundColor: UIColor? {
+  open override var backgroundColor: UIColor? {
     get {
       return super.backgroundColor
     } set {
@@ -208,7 +207,7 @@ public class TVOSButton: UIButton {
     commonInit()
   }
 
-  private func commonInit() {
+  fileprivate func commonInit() {
     // remove super's subviews if set
     imageView?.image = nil
     titleLabel?.text = nil
@@ -252,13 +251,13 @@ public class TVOSButton: UIButton {
 
     // add title constraints
     tvosTitleLabel?.fillHorizontal(toView: self)
-    tvosTitleLabel?.pinHeight(50)
+    tvosTitleLabel?.pinHeight(height: 50)
     tvosTitleLabelTopConstraint = NSLayoutConstraint(
       item: tvosTitleLabel!,
-      attribute: .Top,
-      relatedBy: .Equal,
+      attribute: .top,
+      relatedBy: .equal,
       toItem: self,
-      attribute: .Bottom,
+      attribute: .bottom,
       multiplier: 1, 
       constant: 0)
     addConstraint(tvosTitleLabelTopConstraint!)
@@ -270,68 +269,68 @@ public class TVOSButton: UIButton {
 
   // MARK: Focus
 
-  public override func didUpdateFocusInContext(context: UIFocusUpdateContext, withAnimationCoordinator coordinator: UIFocusAnimationCoordinator) {
+  open override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
     if context.nextFocusedView == self {
-      tvosButtonState = .Focused
+      tvosButtonState = .focused
     } else if context.previouslyFocusedView == self {
-      tvosButtonState = .Normal
+      tvosButtonState = .normal
     }
   }
 
   // MARK: Handlers
 
   /// Override this function if you want to get notified about state changes.
-  public func tvosButtonStateDidChange(tvosButtonState: TVOSButtonState) { }
+  open func tvosButtonStateDidChange(_ tvosButtonState: TVOSButtonState) { }
 
   /// Override this function for style your subclass TVOSButton.
-  public func tvosButtonStyleForState(tvosButtonState: TVOSButtonState) -> TVOSButtonStyle {
+  open func tvosButtonStyleForState(_ tvosButtonState: TVOSButtonState) -> TVOSButtonStyle {
     switch tvosButtonState {
-    case .Focused:
+    case .focused:
       return TVOSButtonStyle(
-        backgroundColor: UIColor.whiteColor(),
+        backgroundColor: UIColor.white,
         backgroundImage: nil,
         cornerRadius: 10,
         scale: 1.1,
-        shadow: TVOSButtonShadow.Focused,
+        shadow: TVOSButtonShadow.focused,
         contentView: nil,
-        badgeStyle: TVOSButtonImage.Fit,
-        textStyle: TVOSButtonLabel.DefaultText(color: UIColor.blackColor()),
-        titleStyle: TVOSButtonLabel.DefaultTitle(color: UIColor.whiteColor()))
+        badgeStyle: TVOSButtonImage.fit,
+        textStyle: TVOSButtonLabel.defaultText(color: UIColor.black),
+        titleStyle: TVOSButtonLabel.defaultTitle(color: UIColor.white))
 
-    case .Highlighted:
+    case .highlighted:
       return TVOSButtonStyle(
-        backgroundColor: UIColor.whiteColor(),
+        backgroundColor: UIColor.white,
         backgroundImage: nil,
         cornerRadius: 10,
         scale: 0.95,
-        shadow: TVOSButtonShadow.Highlighted,
+        shadow: TVOSButtonShadow.highlighted,
         contentView: nil,
-        badgeStyle: TVOSButtonImage.Fit,
-        textStyle: TVOSButtonLabel.DefaultText(color: UIColor.blackColor()),
-        titleStyle: TVOSButtonLabel.DefaultTitle(color: UIColor.whiteColor()))
+        badgeStyle: TVOSButtonImage.fit,
+        textStyle: TVOSButtonLabel.defaultText(color: UIColor.black),
+        titleStyle: TVOSButtonLabel.defaultTitle(color: UIColor.white))
 
     default:
       return TVOSButtonStyle(
-        backgroundColor: UIColor.grayColor(),
+        backgroundColor: UIColor.gray,
         cornerRadius: 10,
-        badgeStyle: TVOSButtonImage.Fit,
-        textStyle: TVOSButtonLabel.DefaultText(color: UIColor.whiteColor()),
-        titleStyle: TVOSButtonLabel.DefaultTitle(color: UIColor.whiteColor()))
+        badgeStyle: TVOSButtonImage.fit,
+        textStyle: TVOSButtonLabel.defaultText(color: UIColor.white),
+        titleStyle: TVOSButtonLabel.defaultTitle(color: UIColor.white))
     }
   }
 
-  public func handleStateDidChange() {
+  open func handleStateDidChange() {
     tvosButtonStateDidChange(tvosButtonState)
     let style = tvosButtonStyleForState(tvosButtonState)
     layoutIfNeeded()
-    UIView.animateWithDuration(0.2,
+    UIView.animate(withDuration: 0.2,
       delay: 0,
       usingSpringWithDamping: 1,
       initialSpringVelocity: 0,
-      options: .AllowAnimatedContent,
+      options: .allowAnimatedContent,
       animations: {
         // animate title label down because of button scales up on focus
-        self.tvosTitleLabelTopConstraint?.constant = self.tvosButtonState == .Focused ? self.titleLabelPaddingYOnFocus : 0
+        self.tvosTitleLabelTopConstraint?.constant = self.tvosButtonState == .focused ? self.titleLabelPaddingYOnFocus : 0
         // handle styling
         style.applyStyle(onButton: self)
         self.layoutIfNeeded()
