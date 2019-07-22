@@ -35,8 +35,8 @@ public extension UIView{
     }
     
     public func pin(
-        edge: NSLayoutAttribute,
-        toEdge: NSLayoutAttribute,
+        edge: NSLayoutConstraint.Attribute,
+        toEdge: NSLayoutConstraint.Attribute,
         ofView: UIView?,
         withInset: CGFloat = 0) {
         guard let view = superview else {

@@ -52,7 +52,7 @@ open class TVOSToggleButton: TVOSButton {
 
   // MARK: Toggle
 
-  open func didToggled(_ sender: TVOSToggleButton) {
+  @objc open func didToggled(_ sender: TVOSToggleButton) {
     didToggledAction?(
       toggleState,
       { state in

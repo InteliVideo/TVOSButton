@@ -10,7 +10,7 @@ import UIKit
 
 
 public enum TVOSButtonImage {
-  case custom(contentMode: UIViewContentMode?, size: CGSize?, offsets: UIEdgeInsets?, cornerRadius: CGFloat?, backgroundColor: UIColor?,
+  case custom(contentMode: UIView.ContentMode?, size: CGSize?, offsets: UIEdgeInsets?, cornerRadius: CGFloat?, backgroundColor: UIColor?,
     adjustsImageWhenAncestorFocused: Bool?)
   case fill(adjustsImageWhenAncestorFocused: Bool?)
   case fit
@@ -72,7 +72,7 @@ public enum TVOSButtonImage {
 }
 
 public struct TVOSButtonImageStyle {
-  public var contentMode: UIViewContentMode?
+  public var contentMode: UIView.ContentMode?
   public var size: CGSize?
   public var offsets: UIEdgeInsets?
   public var cornerRadius: CGFloat?
