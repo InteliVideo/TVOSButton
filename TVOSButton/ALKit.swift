@@ -14,6 +14,7 @@ public extension UIEdgeInsets {
     
     /// Equal insets for all edges
     public init (inset: CGFloat) {
+        self.init()
         top = inset
         bottom = inset
         left = inset
